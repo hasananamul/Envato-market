@@ -14,24 +14,42 @@
     <link rel="stylesheet" href="style.css">
     
   </head>
-  <body>
+  <body id="mobile_resposive_body">
     <header id="header">
         <div class="header_top">
             <div class="container">
                 <div class="row justify-content-between">
+                    <div class="mobile_btn">
+                        <i id="menu_bar"class=" fas fa-bars"onclick='sideMenuButton()'></i>
+                     </div><!--mobile btn-->
                     <div class="left_logo">
                         <img src="https://i.ibb.co/BLBk9Nq/mobile-logo.png" alt="logo">
                     </div><!--left logo-->
-                    
+                    <div class="mobile_btn">
+                        <i id="search_icon"class=" fa fa-search" aria-hidden="true"></i>
+                     </div><!--mobile btn-->
                     <div class="creat_account">
                         <a href="#">Creat an sccount</a>
                         <input type="submit" value="sign in">
                     </div><!--creat  account-->
-                    <div class="mobile_btn">
-                        <i id="menu_bar"class=" fas fa-bars"></i>
-                        <i id="search_icon"class=" fa fa-search" aria-hidden="true"></i>
-                        </div><!--mobile btn-->
                 </div><!--row-->
+                <div id="side_mobile_menu">
+                    <div class="side_mobile_menu_item d-md-none">
+                        <div class="left_logo">
+                            <img src="https://i.ibb.co/BLBk9Nq/mobile-logo.png" alt="logo">
+                        </div><!--left logo-->
+                        <ul>
+                            <li><img src="https://i.ibb.co/Sdd1nPK/themeforest.png" alt="themeforest" border="0"><a href="#">themeforest</a></li>
+                            <li><img src="https://i.ibb.co/Xzdn1w2/codecanyon.png" alt="codecanyon" border="0"><a href="#">codecaneyon</a></li>                  
+                            <li><img src="https://i.ibb.co/61zP8n2/videohive.png" alt="videohive" border="0"><a href="#">videohive</a></li>
+                            <li> <img src="https://i.ibb.co/X200jjd/graphicriver.png" alt="graphicriver" border="0"><a href="#">audiogungle</a></li>                  
+                            <li><img src="https://i.ibb.co/Xzdn1w2/codecanyon.png" alt="codecanyon" border="0"><a href="#">graphicriver</a></li>                
+                            <li>  <img src="https://i.ibb.co/pWzW1Ly/audiojungle.png" alt="audiojungle" border="0"><a href="#">photodune</a></li>                 
+                            <li> <img src="https://i.ibb.co/82HDB3L/3docean.png" alt="3docean"><a href="#">3docean</a></li>
+                            <li><img src="https://i.ibb.co/0XxHx4n/activeden.png" alt=""><a href="#">activeden</a></li>
+                        </ul>
+                    </div><!--manu item-->
+                </div><!--side mobile menu-->
             </div><!--container-->
         </div><!--header top-->
         <div class="header_bottom">
@@ -60,8 +78,8 @@
                     <h4>Search envato markert</h4>
                 </div><!--slider text-->
                 <div class="slidere_input_boxes d-flex justify-content-center">
-                    <button class="click_btn"><span>Themes & Templates</span> <i class="fa fa-caret-down"></i> </button>
-                    <div class="drop_down_items">
+                    <button onclick="selectOption()" class="click_btn"><span>Themes & Templates</span> <i class="fa fa-caret-down"></i> </button>
+                    <div id="drop_down_items">
                         <ul>
                             <li><a href="#">Themes & Templates</a></li>
                             <li><a href="#">Graphics & Vectors</a></li>
@@ -377,14 +395,39 @@
     </section><!-- foote section -->
 
     <script>
-        $(document).ready(function(){
-            $(".click_btn").click(function(){
-                $(".drop_down_items").toggle(2000);
-            });
-            $("#menu_bar").click(function(){
-                $(".menu_item ul").toggle(2000);
-            });
-        });
+        // $(document).ready(function(){
+        //     $(".click_btn").click(function(){
+        //         $(".drop_down_items").toggle(2000);
+        //     });
+        // });
+            function selectOption(){
+                // document.getElementById('drop_down_items')
+                    if (document.getElementById('drop_down_items').style.height==='0px'){
+                        document.getElementById('drop_down_items').style.height='300px';
+                        document.getElementById('drop_down_items').style.transition='.6s';
+                    }
+                    else {
+                        document.getElementById('drop_down_items').style.height='0px';
+                        document.getElementById('drop_down_items').style.transition='.6s';
+
+                    }
+                }
+           function sideMenuButton(){             
+            let x = document.getElementById('side_mobile_menu');
+            let y = document.getElementById('mobile_resposive_body');
+            if (x.style.width=='0px'){
+                x.style.width='250px';
+                 y.style.marginLeft='250px';
+                x.style.transition='.7s'
+                y.style.transition='.7s'
+            }
+            else {
+                x.style.width='0px';
+                y.style.marginLeft='0px';
+                y.style.transition='.7s'
+                x.style.transition='.7s'
+        }
+           }
     </script>
 
     <!-- Optional JavaScript -->
