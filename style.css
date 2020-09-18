@@ -6,9 +6,10 @@ img{
 a{
     text-decoration: none;
 }
-.header_top{
+.header_top {
     background: #232323;
     padding: 7px 0px;
+    position: relative;
 }
 .creat_account a {
 	color: #fff;
@@ -109,25 +110,32 @@ a{
 	justify-content: space-between;
 	align-items: center;
 }
-.drop_down_items {
-	position: absolute;
-	left: 125px;
-	top: 51px;
-    width: 333px;
-    text-align: left;
-	display: none;
-	background: #fff;
+.click_btn:focus {
+    outline: 0;
 }
-.drop_down_items ul{
+#drop_down_items {
+    position: absolute;
+    left: 140px;
+    box-shadow: 0px 4px 6px 0px;
+    top: 51px;
+    width: 333px;
+    border-radius: 0px 0px 5px 5px;
+    text-align: left;
+    overflow: hidden;
+    height: 0;
+    background: #F5F5F5;
+    z-index: 9999;
+}
+#drop_down_items ul{
     list-style: none;
     padding: 0;
 }
-.drop_down_items ul li a:hover{
+#drop_down_items ul li a:hover{
 	background-color: #000000;
 	color: #fff;
 	text-decoration: none;
 }
-.drop_down_items ul li a {
+#drop_down_items ul li a {
 	color: #000000;
 	font-size: 19px;
 	padding: 2px;
@@ -141,6 +149,9 @@ a{
 	font-size: 18px;
 	width: 86%;
 	border-radius: 4px 0px 0px 4px;
+}
+.input_search_feild input:focus,.input_search_feild button:focus{
+	outline: 0px;
 }
 .input_search_feild button {
 	padding: 11px;
@@ -413,8 +424,61 @@ a{
 a:hover{
 	text-decoration: underline;
 }
+/* mobile menu css */
+div#side_mobile_menu {
+    position: fixed;
+    left: 0;
+	top: 0;
+	width: 0px;
+	height: 100%;
+	background: #232323;
+	z-index: 99999;
+	overflow-x: hidden;
+}
+div#side_mobile_menu .left_logo img {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}
+.side_mobile_menu_item ul{
+	padding: 0%;
+	padding: 10px;
+	list-style: none;
+}
+.side_mobile_menu_item ul li{
+    padding: 5px 0px 5px 15px;
+    line-height: 30px;
 
-
+}
+.side_mobile_menu_item ul li img{
+	width: 20px;
+	height: 20px;
+}
+.side_mobile_menu_item ul li a{
+	color: #cecece;
+    font-size: 16px;
+	display:inline-block;
+}
+.side_mobile_menu_item ul li a:hover{
+	text-decoration: none;
+	color: #fff;
+	transition: .4s;
+}
+i#menu_bar {
+    position: absolute;
+    left: 10px;
+    top: 7px;
+	padding: 5px;
+	transition: .4s;
+}
+#menu_bar:hover{
+	background-color: black;
+}
+i#search_icon {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
 /* responsive css */
 @media all and (max-width:1282px){
 	.creat_account {
@@ -493,6 +557,14 @@ a:hover{
 	}
 	.footer_logo {
 		margin-bottom: 15px;
+	}
+	.drop_down_items {
+		position: absolute;
+		left: 0px;
+		z-index: 999;
+	}
+	#drop_down_items {
+		left: 45px;
 	}
 }
 @media (max-width: 384px){
