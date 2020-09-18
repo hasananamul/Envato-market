@@ -440,26 +440,26 @@ div#side_mobile_menu .left_logo img {
     margin: auto;
     margin-top: 10px;
 }
-.side_mobile_menu_item ul{
+#side_mobile_menu_item ul{
 	padding: 0%;
 	padding: 10px;
 	list-style: none;
 }
-.side_mobile_menu_item ul li{
+#side_mobile_menu_item ul li{
     padding: 5px 0px 5px 15px;
     line-height: 30px;
 
 }
-.side_mobile_menu_item ul li img{
+#side_mobile_menu_item ul li img{
 	width: 20px;
 	height: 20px;
 }
-.side_mobile_menu_item ul li a{
+#side_mobile_menu_item ul li a{
 	color: #cecece;
     font-size: 16px;
 	display:inline-block;
 }
-.side_mobile_menu_item ul li a:hover{
+#side_mobile_menu_item ul li a:hover{
 	text-decoration: none;
 	color: #fff;
 	transition: .4s;
